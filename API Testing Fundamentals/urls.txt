@@ -1,0 +1,10 @@
+Application
+	postman
+	
+URL
+	thinking-tester-contact-list.herokuapp.com/contacts
+	studio.apollographql.com/public/countries/variant/current/home
+	webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso
+	gitpod.io/#https://github.com/djwester/todo-list-testing
+	https://oauth.pstmn.io/v1/browser-callback
+	https://www.codecentric.de/wissens-hub/blog/running-robot-framework-in-your-own-docker-container
