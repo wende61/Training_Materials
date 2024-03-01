@@ -15,29 +15,29 @@
 //     res.json(user);
 //  });
 
-app.use((req, res, next) => {
+// app.use((req, res, next) => {
 
-    const authHeader = req.headers.authorizationHeader;
+//     const authHeader = req.headers.authorizationHeader;
 
-    if(!authHeader  || authHeader.indexOf('Basic ') !== 0) {
-        return res.status(401).json({ message: 'Unauthorized' });
-    }
+//     if(!authHeader  || authHeader.indexOf('Basic ') !== 0) {
+//         return res.status(401).json({ message: 'Unauthorized' });
+//     }
 
-    const base64Credintials = authHeader.split(' ')[1];
-    const credintials = Buffer.from(base64Credintials, 'base64').toString();
-    const [username, password] = credintials.split(':');
+//     const base64Credintials = authHeader.split(' ')[1];
+//     const credintials = Buffer.from(base64Credintials, 'base64').toString();
+//     const [username, password] = credintials.split(':');
 
-    if(username !== 'admin' || password !== 'password') {
-        return res.status(401).json({ message: 'Unauthorized' });
-    }
+//     if(username !== 'admin' || password !== 'password') {
+//         return res.status(401).json({ message: 'Unauthorized' });
+//     }
 
-    req.user = {
-        username: 'admin',
-        email: 'admin@example.com'
-    };
+//     req.user = {
+//         username: 'admin',
+//         email: 'admin@example.com'
+//     };
 
-    next();
-})
+//     next();
+// });
  
 app.get('/user', (req, res) => {
     const name = req.query.name;
