@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "4432821c-9a87-471e-9d94-52e883f8a225",
+		"name": "No workflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f2c207d-f9cc-42eb-b023-33a87085e87e",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f2c207d-f9cc-42eb-b023-33a87085e87e",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f2c207d-f9cc-42eb-b023-33a87085e87e",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f2c207d-f9cc-42eb-b023-33a87085e87e",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "25fd4df1-0b74-4ce4-91d8-28666bb4f057",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "320c6946-5990-4e28-b91d-debd7399af45",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

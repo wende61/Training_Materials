@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "b1d4dd0e-c6a7-4cf0-9227-e0ee28b3b9ab",
+		"name": "Simple workflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed13983e-f397-483e-b761-0f2742bdfe74",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setNextRequest(\"Request 2\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae1aea47-ac89-4296-a812-09be7683bac5",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setNextRequest(\"Request 3\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "489b7711-3e76-48fd-91db-0fdba0ac8d59",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5ff4666-682b-4e30-8652-7f040d879b4d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c33f7489-144f-41af-bf09-dcc3dcbe59fc",
+						"type": "text/javascript",
+						"exec": [
+							"if (pm.globals.get(\"runnedOnce\")) {",
+							"    postman.setNextRequest(null);",
+							"}",
+							"",
+							"pm.globals.set(\"runnedOnce\", 1);",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "25fd4df1-0b74-4ce4-91d8-28666bb4f057",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "320c6946-5990-4e28-b91d-debd7399af45",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
