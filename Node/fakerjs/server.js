@@ -1,5 +1,10 @@
  const { faker } = require('@faker-js/faker');
  const express = require('express');
+ const { generateUsers } = require('./model/users');
+ const Product = require('./model/product');
+ const Order = require('./model/order');
+
+
 
  const app = express();
  const port = 3000;
