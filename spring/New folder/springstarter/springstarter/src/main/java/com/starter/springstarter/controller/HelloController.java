@@ -22,14 +22,14 @@ public class HelloController {
     
     @RequestMapping("/user")
     @ResponseBody
-    private String getUser() {
+    private User getUser() {
         String uri = "https://jsonplaceholder.typicode.com/users/1";
         RestTemplate restTemplate = new RestTemplate();
 
         User user = restTemplate.getForObject(uri, User.class);
         System.out.println("User: " + user);
 
-        return "User detail page.";
+        return user;
     }
 
 }
