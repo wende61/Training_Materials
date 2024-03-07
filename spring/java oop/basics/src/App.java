@@ -18,8 +18,8 @@ public class App {
 
         System.out.println("manager is: " + manager.toString());
 
-        Dog dog = new Dog();
-        Cat cat = new Cat();
+        Animal dog = new Dog();
+        Animal cat = new Cat();
 
 
         dog.eat();

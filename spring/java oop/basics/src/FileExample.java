@@ -64,7 +64,7 @@ public class FileExample {
         File f = null;
         String[] files = { "file1.txt", "file2.txt" };
         try {
-            //create a file
+            // create a file
             create();
             // write to file
             write();
@@ -78,10 +78,19 @@ public class FileExample {
 
                 // find the absolute path
                 String a = f.getAbsolutePath();
+                // find the parent
+                String parent = f.getParent();
+                // find the parent
+                String name = f.getName();
+                // find the parent
+                String path = f.getPath();
 
                 // prints absolute path
-                System.out.print(a);
+                System.out.println("Absolute Path: "+ a);
 
+                System.out.println("Parent Path: " + parent);
+                System.out.println("Name: "+ name);
+                System.out.println("Path: " +path);
                 // prints
                 System.out.println(" is executable: " + bool);
             }
