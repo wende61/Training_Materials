@@ -17,7 +17,7 @@ public class FileExample {
         // Using FileOutputStream() constructor
         // Using File.createNewFile() method
         // Using Files.write() method
-        File file = new File("javadirectory/testFile1.txt");
+        File file = new File("startfile.txt");
 
         // Create the file
         try {
@@ -28,12 +28,13 @@ public class FileExample {
             }
 
             String data = "Test data";
-            Files.write(Paths.get("javadirectory/testFile2.txt"), data.getBytes());
+            Files.write(Paths.get("testFile2.txt"), data.getBytes());
 
             List<String> lines = Arrays.asList("1st line", "2nd line");
             Files.write(Paths.get("file6.txt"), lines, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (IOException e) {
+            
             e.printStackTrace();
         }
     }
@@ -67,33 +68,33 @@ public class FileExample {
             // create a file
             create();
             // write to file
-            write();
+            //write();
             // for each string in string array
-            for (String s : files) {
-                // create new file
-                f = new File(s);
+            // for (String s : files) {
+            //     // create new file
+            //     f = new File(s);
 
-                // true if the file is executable
-                boolean bool = f.canExecute();
+            //     // true if the file is executable
+            //     boolean bool = f.canExecute();
 
-                // find the absolute path
-                String a = f.getAbsolutePath();
-                // find the parent
-                String parent = f.getParent();
-                // find the parent
-                String name = f.getName();
-                // find the parent
-                String path = f.getPath();
+            //     // find the absolute path
+            //     String a = f.getAbsolutePath();
+            //     // find the parent
+            //     String parent = f.getParent();
+            //     // find the parent
+            //     String name = f.getName();
+            //     // find the parent
+            //     String path = f.getPath();
 
-                // prints absolute path
-                System.out.println("Absolute Path: "+ a);
+            //     // prints absolute path
+            //     System.out.println("Absolute Path: "+ a);
 
-                System.out.println("Parent Path: " + parent);
-                System.out.println("Name: "+ name);
-                System.out.println("Path: " +path);
-                // prints
-                System.out.println(" is executable: " + bool);
-            }
+            //     System.out.println("Parent Path: " + parent);
+            //     System.out.println("Name: "+ name);
+            //     System.out.println("Path: " +path);
+            //     // prints
+            //     System.out.println(" is executable: " + bool);
+            // }
         } catch (Exception e) {
             // if any I/O error occurs
             e.printStackTrace();
