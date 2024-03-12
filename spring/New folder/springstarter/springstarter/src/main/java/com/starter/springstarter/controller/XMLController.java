@@ -31,6 +31,8 @@ public class XMLController {
             @RequestBody(required = false) String xmlData) throws Exception {
         if (xmlData != null) {
             // Process XML data from the request body
+            XmlUtility.SAXParser();
+            XmlUtility.DOMParser();
             XmlUtility.xpath(xmlData);
             return XmlUtility.processXmlData(xmlData);
         } else if (xmlFile != null && !xmlFile.isEmpty()) {

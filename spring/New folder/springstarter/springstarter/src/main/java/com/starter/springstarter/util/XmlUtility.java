@@ -1,6 +1,22 @@
 package com.starter.springstarter.util;
 
-import java.awt.print.Book;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +26,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
@@ -22,15 +39,13 @@ import javax.xml.xpath.XPathFactory;
 
 import org.springframework.web.multipart.MultipartFile;
 import org.w3c.dom.Document;
-
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.starter.springstarter.dto.Bookstore;
 import com.starter.springstarter.dto.Person;
 import com.starter.springstarter.dto.PersonWithJakarta;
-
-import ch.qos.logback.core.pattern.parser.Node;
 
 public class XmlUtility {
 
@@ -106,7 +121,56 @@ public class XmlUtility {
             e.printStackTrace();
         }
     }
+    public static void SAXParser() {
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
 
+            DefaultHandler handler = new DefaultHandler() {
+                public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+                    System.out.println("Start Element :" + qName);
+                }
+
+                public void endElement(String uri, String localName, String qName) throws SAXException {
+                    System.out.println("End Element :" + qName);
+                }
+
+                public void characters(char ch[], int start, int length) throws SAXException {
+                    System.out.println("Characters :" + new String(ch, start, length));
+                }
+            };
+            InputStream xmlInputStream =
+            XmlUtility.class.getResourceAsStream("/person.xml");
+            saxParser.parse(xmlInputStream, handler);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void DOMParser() {
+        try {
+            InputStream xmlInputStream =
+            XmlUtility.class.getResourceAsStream("/person.xml");
+            File inputFile = new File("../resources/person.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlInputStream);
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName("person");
+
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+                Node node = nList.item(temp);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element = (Element) node;
+                    System.out.println("Name : " + element.getElementsByTagName("name").item(0).getTextContent());
+                    System.out.println("Age : " + element.getElementsByTagName("age").item(0).getTextContent());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public static void xpath(String xmlString) throws Exception {
         try {
             // Parsing XML
