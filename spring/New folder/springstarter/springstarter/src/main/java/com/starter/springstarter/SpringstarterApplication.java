@@ -7,6 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringstarterApplication {
 
 	public static void main(String[] args) {
+		
+		System.setProperty("com.sun.xml.bind.v2.runtime.JAXBContextImpl.fastBoot", "false");
+		System.setProperty("com.sun.xml.bind.v2.runtime.JAXBContextImpl.fastBoot", "false");
+
 		SpringApplication.run(SpringstarterApplication.class, args);
 	}
 

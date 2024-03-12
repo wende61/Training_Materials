@@ -18,6 +18,7 @@ public class GlobalExceptionHandler {
         errorResponse.setError("Bad Request");
         errorResponse.setMessage("Validation failed for object='" + ex.getParameter().getParameterName()
                 + "'. Error count: " + ex.getBindingResult().getErrorCount());
+                errorResponse.setErrorObject(ex.getBindingResult().getAllErrors());
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 }
