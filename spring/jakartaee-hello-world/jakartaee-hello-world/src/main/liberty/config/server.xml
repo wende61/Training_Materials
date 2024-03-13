@@ -19,7 +19,7 @@
     </dataSource>
 
     <library id="postgresql-library">
-        <file name="${server.config.dir}/postgresql-42.2.8.jar"/>
+        <fileset dir="${server.config.dir}/" includes="*.jar"/>
     </library>
 
     <basicRegistry id="defaultBasicRegistry" realm="BasicRealm">

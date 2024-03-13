@@ -5,13 +5,13 @@
     <persistence-unit name="default" transaction-type="JTA">
         <jta-data-source>jdbc/postgresql</jta-data-source>
         <properties>
-            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"
             />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://postgres-container:5433/train"
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/train"
             />
             <property name="javax.persistence.jdbc.user" value="postgres" />
             <property name="javax.persistence.jdbc.password" value="postgres" />
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="create" />
