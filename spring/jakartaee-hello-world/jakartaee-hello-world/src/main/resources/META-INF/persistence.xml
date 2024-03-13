@@ -1,0 +1,24 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+    version="2.1">
+    <persistence-unit name="default" transaction-type="JTA">
+        <jta-data-source>jdbc/postgresql</jta-data-source>
+        <properties>
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"
+            />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://postgres-container:5433/train"
+            />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="postgres" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.use_sql_comments" value="true" />
+            <property name="hibernate.generate_statistics" value="true" />
+            <property name="hibernate.ejb.interceptor" value="org.hibernate.Interceptor" />
+        </properties>
+    </persistence-unit>
+</persistence>
